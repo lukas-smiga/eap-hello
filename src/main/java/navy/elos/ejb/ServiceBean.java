@@ -24,6 +24,7 @@ public class  ServiceBean {
 		em.persist(p);
 	}
 
+	@Transactional
 	public void delete(SimpleProperty p){
 
 		Query query = em.createQuery("delete FROM SimpleProperty p where p.key='"+p.getKey()+"'");
@@ -32,11 +33,13 @@ public class  ServiceBean {
 
 	}
 
+	@Transactional
 	public void delete(String key)  {
 		Query q = em.createQuery("delete FROM SimpleProperty p where p.key='" + key + "'");
 		q.executeUpdate();
 	}
 
+	@Transactional
 	public List<SimpleProperty> findAll(){
 
 		Query query = em.createQuery("FROM SimpleProperty");
@@ -46,6 +49,7 @@ public class  ServiceBean {
 
 	}
 
+	@Transactional
 	public SimpleProperty findById(String id){
 
 		SimpleProperty p = em.find(SimpleProperty.class, id);
