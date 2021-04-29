@@ -44,7 +44,7 @@ public class RESTService {
 
 	@DELETE
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/delete")
+	@Path("/delete/{key}")
 	public Response deleteProperty(@PathParam("key") String key) {
 		ejb.delete(key);
 		return Response.ok("Deleted property: " + key).build();
