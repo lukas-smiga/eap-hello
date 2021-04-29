@@ -32,6 +32,11 @@ public class  ServiceBean {
 
 	}
 
+	public void delete(String key)  {
+		Query q = em.createQuery("delete FROM SimpleProperty p where p.key='" + key + "'");
+		q.executeUpdate();
+	}
+
 	public List<SimpleProperty> findAll(){
 
 		Query query = em.createQuery("FROM SimpleProperty");

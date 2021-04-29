@@ -31,15 +31,24 @@ public class RESTService {
 	{
 		return ejb.findAll();
 	}
+
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response createProperty(@FormParam("key")String key,
-								   @FormParam("value")String value)
-	{
+								   @FormParam("value")String value) {
 		ejb.put(key,value);
 
 		return Response.ok("Inserted! Go back and check the list.").build();
 
 	}
+
+	@DELETE
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/delete")
+	public Response deleteProperty(@PathParam("key") String key) {
+		ejb.delete(key);
+		return Response.ok("Deleted property: " + key).build();
+	}
+
 
 }
