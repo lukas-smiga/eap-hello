@@ -44,6 +44,7 @@ public class  ServiceBean {
 
 		Query query = em.createQuery("FROM SimpleProperty");
 
+		@SuppressWarnings("unchecked")
 		List <SimpleProperty> list = query.getResultList();
 		return list;
 
