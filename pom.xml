@@ -10,6 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
+        <version.war.plugin>3.2.2</version.war.plugin>
         <!-- Protocol to use for communication with remote maven repositories.
                      You can set to 'http' if you are using a maven proxy and 'https'
                      interferes with that. Use 'https' for builds that will be released
